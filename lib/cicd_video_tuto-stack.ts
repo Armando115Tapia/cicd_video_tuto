@@ -9,7 +9,7 @@ export class CicdVideoTutoStack extends cdk.Stack {
     new CodePipeline(this, "Pipeline", {
       pipelineName: "TestPipeline",
       synth: new ShellStep("Synth", {
-        input: CodePipelineSource.gitHub("Armando115Tapia/cicd_video_tuto", "main"),
+        input: CodePipelineSource.gitHub("Armando115Tapia/cicd_video_tuto", "master"),
         commands: ["npm ci", "npm run build", "npx cdk synth"],
       }),
     });
